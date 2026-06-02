@@ -4,53 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plataforma de Checagem de Fatos</title>
-    <!-- Link para o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <h1>Fact-Checking Central</h1>
-    <p class="subtitle">Passe o mouse sobre os cartões para revelar a verdade</p>
+    <p class="subtitle">Passe o mouse ou toque no cartão para revelar a verdade</p>
 
     <div class="container">
         
-        <!-- Cartão 01: Pinguins (Mantido) -->
+        <!-- Cartão 01 -->
         <div class="flashcard">
             <div class="card-inner">
-                <!-- Frente: Notícia Falsa -->
+                <!-- Frente -->
                 <div class="card-front">
                     <span class="tag tag-fake">Boato Falso</span>
                     <img src="https://unsplash.com" alt="Pinguim tentando voar" class="card-img">
                     <h2>Pinguins conseguem voar como pássaros de verdade.</h2>
+                    <span class="action-hint">Toque para virar 🔄</span>
                 </div>
-                <!-- Trás: Fato Real -->
+                <!-- Trás -->
                 <div class="card-back">
                     <span class="tag tag-fact">Fato Real</span>
                     <img src="https://unsplash.com" alt="Pinguim nadando" class="card-img">
                     <p>Pinguins não voam, mas são excelentes nadadores!</p>
+                    <span class="action-hint">Toque para voltar 🔄</span>
                 </div>
             </div>
         </div>
 
-        <!-- Cartão 02: Vacas (Novo Conteúdo) -->
+        <!-- Cartão 02 -->
         <div class="flashcard">
             <div class="card-inner">
-                <!-- Frente: Notícia Falsa -->
+                <!-- Frente -->
                 <div class="card-front">
                     <span class="tag tag-fake">Boato Falso</span>
                     <img src="https://unsplash.com" alt="Vaca pastando" class="card-img">
                     <h2>As vacas conseguem descer escadas com facilidade.</h2>
+                    <span class="action-hint">Toque para virar 🔄</span>
                 </div>
-                <!-- Trás: Fato Real -->
+                <!-- Trás -->
                 <div class="card-back">
                     <span class="tag tag-fact">Fato Real</span>
                     <img src="https://unsplash.com" alt="Vaca olhando de frente" class="card-img">
                     <p>Vacas conseguem subir escadas, mas sua estrutura óssea e inclinação dos joelhos tornam anatomicamente impossível que elas desçam!</p>
+                    <span class="action-hint">Toque para voltar 🔄</span>
                 </div>
             </div>
         </div>
 
     </div>
+
+    <!-- Script para suportar cliques/toques em celulares -->
+    <script>
+        document.querySelectorAll('.flashcard').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
